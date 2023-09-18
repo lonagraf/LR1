@@ -25,24 +25,19 @@ public class MainActivity extends AppCompatActivity {
             if(GameInfo.isTurn) {
                 btn.setText(GameInfo.firstSymbol);
                 int [] comb = calcWinnPositions(GameInfo.firstSymbol);
-                if(comb != null) {
-                    Toast.makeText(getApplicationContext(),
-                            "winner is " + GameInfo.firstSymbol,
-                            Toast.LENGTH_LONG).show();
-                    for(int i = 0; i<comb.length; i++){
-                        squares.get(comb[i]).setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(),R.color.green));
-
+                if(comb != null) {Toast.makeText(getApplicationContext(), "winner is " + GameInfo.firstSymbol, Toast.LENGTH_LONG).show();
+                    for(int i = 0; i<comb.length; i++){squares.get(comb[i]).
+                            setBackgroundTintList(ContextCompat.
+                                    getColorStateList(getApplicationContext(), R.color.green));
                     }
                 }
             }
-            else {
-                btn.setText(GameInfo.secondSymbol);
+            else {btn.setText(GameInfo.secondSymbol);
                 int [] comb = calcWinnPositions(GameInfo.secondSymbol);
-                if(comb != null) {Toast.makeText(getApplicationContext(),
-                            "winner is " + GameInfo.secondSymbol,
-                            Toast.LENGTH_LONG).show();
-                    for(int i = 0; i<comb.length; i++){
-                        squares.get(comb[i]).setBackgroundTintList(ContextCompat.getColorStateList(getApplicationContext(),R.color.green));
+                if(comb != null) {Toast.makeText(getApplicationContext(), "winner is " + GameInfo.secondSymbol, Toast.LENGTH_LONG).show();
+                    for(int i = 0; i<comb.length; i++){squares.get(comb[i]).
+                            setBackgroundTintList(ContextCompat.
+                                    getColorStateList(getApplicationContext(), R.color.green));
                     }
                 }
             }
@@ -52,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
         generateBoard(3,3,board);
         setListenerToSquares(listener);
         initClearBoardBtn();
-
-
     }
 
     private void initClearBoardBtn()
